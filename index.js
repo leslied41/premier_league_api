@@ -26,7 +26,7 @@ app.use(cors(corsOptions));
 //routes
 app.get("/", (req, res) => {
   console.log("test");
-  res.send("hello it is my first time");
+  res.send("hello it is my first time!");
 });
 //user route
 app.use(user_router);
