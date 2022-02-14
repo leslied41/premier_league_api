@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Newcastle",
+    "manager": "Eddie Howe",
+    "teamValue": "€280m",
+    "venue": "St James",
+    "founded": "1892"
+  },
+  {
+    "name": "Man City",
+    "manager": "Pep Guardiola",
+    "teamValue": "€980m",
+    "venue": "City of Manchester Stadium",
+    "founded": "1880"
+  },
+  {
+    "name": "Chelsea",
+    "manager": "Thomas Tuchel",
+    "teamValue": "£963m",
+    "venue": "Stamford Bridge",
+    "founded": "1905"
+  },
+  {
+    "name": "Manchester United",
+    "manager": "Ralf Rangnick",
+    "teamValue": "£1214m",
+    "venue": "Old Trafford",
+    "founded": "1878"
+  }
+]
