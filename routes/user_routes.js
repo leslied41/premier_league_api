@@ -45,7 +45,7 @@ router.post("/login", async (req, res) => {
     res.cookie("access-token", access_token, {
       maxAge: 60 * 60 * 24 * 30 * 1000,
     });
-    res.json("logged in");
+    res.json({ msg: "log in" }, { token: access_token });
   }
 });
 
