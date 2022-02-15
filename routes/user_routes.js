@@ -42,11 +42,11 @@ router.post("/login", async (req, res) => {
     res.status(401).json({ error: "Invalid Credentials" });
   } else {
     const access_token = createToken(user);
-    res.cookie("access-token", access_token, {
-      maxAge: 60 * 60 * 24 * 30 * 1000,
-      httpOnly: false,
-    });
-    res.json({ msg: "log in", token: access_token });
+    // res.cookie("access-token", access_token, {
+    //   maxAge: 60 * 60 * 24 * 30 * 1000,
+    //   httpOnly: false,
+    // });
+    res.json({ token: access_token });
   }
 });
 

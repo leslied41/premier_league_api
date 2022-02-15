@@ -6,14 +6,12 @@ dotenv.config();
 const notFound = require("./middleware/not-found");
 const errorHandler = require("./middleware/error-handler");
 const connectDB = require("./db/connect");
-const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 //middleware
-app.use(cookieParser());
 app.use(express.json());
 
 const corsOptions = {

@@ -12,14 +12,20 @@ const createToken = (user) => {
 
 const verifyToken = (permission) => {
   return (req, res, next) => {
-    const access_token = req.cookies["access-token"];
-    if (!access_token) {
-      return res
-        .status(400)
-        .json({ error: "User not authenticated", cookie: req.cookies });
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(" ")[1];
+    console.log(token);
+    if (token == null) {
+      return res.status(400).json({ error: "User not authenticated" });
     }
+    // const access_token = req.cookies["access-token"];
+    // if (!access_token) {
+    //   return res
+    //     .status(400)
+    //     .json({ error: "User not authenticated", cookie: req.cookies });
+    // }
     try {
-      const valid_token = verify(access_token, process.env.JWT_SECRET);
+      const valid_token = verify(token, process.env.JWT_SECRET);
       if (valid_token) {
         //console.log(req.cookies);
         //req.authenticated = true;
