@@ -83,6 +83,7 @@ const addNewTeam = (req, res) => {
   newTeam
     .save()
     .then((data) => {
+      //console.log(data);
       res.json(data);
     })
     .catch((error) => {
