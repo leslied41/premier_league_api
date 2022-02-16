@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 const corsOptions = {
-  origin: "*", //included origin as true
+  origin: true, //included origin as true
   credentials: true, //included credentials as true
 };
 
