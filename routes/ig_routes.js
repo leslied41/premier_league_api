@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const igModel = require("../models/ig");
 
-router.post("add/", async (req, res) => {
+router.post("/add", async (req, res) => {
   const newIg = new igModel({
     start_time: req.body.start_time,
     id: new Date().getTime().toString(),
