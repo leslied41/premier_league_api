@@ -33,4 +33,11 @@ router.patch("/update/:id", async (req, res) => {
   }
 });
 
+router.get("/get", async (req, res) => {
+  const start_time = await igModel.find({});
+  res.send({
+    start_time,
+  });
+});
+
 module.exports = router;
