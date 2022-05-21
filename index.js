@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const teams_router = require("./routes/teams_routes.js");
 const user_router = require("./routes/user_routes");
+const ig_router = require("./routes/ig_routes");
 dotenv.config();
 const notFound = require("./middleware/not-found");
 const errorHandler = require("./middleware/error-handler");
@@ -30,6 +31,9 @@ app.get("/", (req, res) => {
 app.use(user_router);
 //teams route
 app.use("/api", teams_router);
+//this is for the honn web to refresh the longlived token and to store the
+//lately starting tiem.
+app.use("/ig", ig_router);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -117,3 +117,27 @@ module.exports = {
   deleteTeam,
   updateTeam,
 };
+
+/*
+Suppose you have defined your route name like this:
+https://localhost:3000/user/:userId
+which will become:
+https://localhost:3000/user/5896544 
+Here, if you will print: request.params
+{
+userId : 5896544
+}
+so
+request.params.userId = 5896544
+所以因为上面URL定义user/:userID, 因此在user/后面的即为params, 而且params是一个object.
+
+for query
+https://localhost:3000/user?userId=5896544 
+对于query即是在？以后的。
+
+request.query
+{
+userId: 5896544
+}
+so
+request.query.userId = 5896544*/
