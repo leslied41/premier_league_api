@@ -5,6 +5,7 @@ const igModel = require("../models/ig");
 router.post("/add", async (req, res) => {
   const newIg = new igModel({
     start_time: req.body.start_time,
+    access_key: req.body.access_key,
     id: new Date().getTime().toString(),
   });
   newIg
@@ -23,6 +24,7 @@ router.patch("/update/:id", async (req, res) => {
   const filter = { id: id };
   const update = {
     start_time: req.body.start_time,
+    access_key: req.body.access_key,
   };
   try {
     let doc = await igModel.findOneAndUpdate(filter, update);
@@ -34,9 +36,9 @@ router.patch("/update/:id", async (req, res) => {
 });
 
 router.get("/get", async (req, res) => {
-  const start_time = await igModel.find({});
+  const ig_obj = await igModel.find({});
   res.send({
-    start_time,
+    ig_obj,
   });
 });
 
